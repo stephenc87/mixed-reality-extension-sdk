@@ -208,6 +208,18 @@ export class Actor implements ActorLike, Patchable<ActorLike> {
 	}): Actor {
 		return context.internal.Create(options);
 	}
+	/**
+	 * Creates a new, empty actor for WebAssembly without geometry.
+	 * @param context The SDK context object.
+	 * @param options.actor The initial state of the WebAssembly actor.
+	 * @param options.uri A URI to a .was or .wat file
+	 */
+	public static CreateWebAssembly(context: Context, options?: {
+		uri: string;
+		actor?: Partial<ActorLike>;
+	}): Actor {
+		return context.internal.Create(options);
+	}
 
 	/**
 	 * @deprecated
